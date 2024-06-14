@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Newtonsoft.Json;
+
+namespace Anchor_Score
+{
+    public class Anchor
+    {
+        public static void Main()
+        {
+            Tools.ReadJson();
+        }
+    }
+}
