@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using OfficeOpenXml;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.DateTime;
 
 namespace Anchor_Score
 {
@@ -147,9 +148,11 @@ namespace Anchor_Score
 
             //分别写入两个文件夹
             string path_all = ExcelPath(@"data_all.xlsx");
+            ModuleSupport.DATA_ALL = body_all;
             Write(path_all, header_all, body_all);
 
             string path = ExcelPath(@"data.xlsx");
+            ModuleSupport.DATA = body;
             Write(path,header,body);
         }
             //封装方法，写入到excle中
