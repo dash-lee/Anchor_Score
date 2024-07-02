@@ -6,6 +6,7 @@ namespace Anchor_Score
     {
         public static void Main()
         {
+            //转化成EXCEL文件时才需要使用
             Tools.ReadJson();
         }
     }

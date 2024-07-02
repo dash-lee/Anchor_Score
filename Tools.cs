@@ -20,7 +20,7 @@ namespace Anchor_Score
 
         public static void ReadJson()
         {
-            string jsonFilePath = @"C:\Users\victor_hash\Source\Repos\Anchor_Score\Anchor.json";
+            string jsonFilePath = ModuleSupport.jsonPath;
 
             string jsonContent = File.ReadAllText(jsonFilePath);
 
@@ -33,6 +33,7 @@ namespace Anchor_Score
             List<string> header_all = new List<string>()
             {
                 "anchorID",
+                "date",
                 "all_paid_conversions",
                 "all_total_calls",
                 "all_effective_answering_rate",
@@ -50,6 +51,7 @@ namespace Anchor_Score
             List<string> header = new List<string>()
             {
                 "anchorID",
+                "date",
                 "paid_conversions",
                 "total_calls",
                 "effective_answering_rate",
@@ -88,6 +90,7 @@ namespace Anchor_Score
                             if (jsonItem.Name == "all")
                             {
                                 body_all_temp.Add($"{property.Key}");
+                                body_all_temp.Add($"{jsonItem.Name}");
                                 body_all_temp.Add($"{0}");
                                 body_all_temp.Add($"{0}");
                                 body_all_temp.Add($"{0}");
@@ -102,6 +105,7 @@ namespace Anchor_Score
                             else
                             {
                                 body_temp.Add($"{property.Key}");
+                                body_temp.Add($"{jsonItem.Name}");
                                 body_temp.Add($"{0}");
                                 body_temp.Add($"{0}");
                                 body_temp.Add($"{0}");
@@ -122,6 +126,7 @@ namespace Anchor_Score
                             if (jsonItem.Name == "all")
                             {
                                 body_all_temp.Add($"{property.Key}");
+                                body_all_temp.Add($"{jsonItem.Name}");
 
                                 foreach (var jsonDetail_temp in obj_temp)
                                 {
@@ -133,6 +138,7 @@ namespace Anchor_Score
                             else
                             {
                                 body_temp.Add($"{property.Key}");
+                                body_temp.Add($"{jsonItem.Name}");
 
                                 foreach (var jsonDetail_temp in obj_temp)
                                 {
@@ -249,11 +255,11 @@ namespace Anchor_Score
 
             if (path == desktopPath + @"data_all.xlsx")
             {
-                return new List<int>() { 1, 2, 3, 4, 5, 6, 7 ,8,9};
+                return new List<int>() { 1, 2, 3, 4, 5, 6, 7 ,8,9,10};
             }
             else if(path == desktopPath + @"data.xlsx")
             {
-                return new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10};
+                return new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10,11};
             }
             return new List<int>() { };
         }

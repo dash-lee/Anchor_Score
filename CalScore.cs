@@ -33,7 +33,7 @@ namespace Anchor_Score
         //付费转化次数计算权重分(参数：付费转化次数)
         internal static double TransFeeCount(int paidCount)
         {
-            
+            return 1;
         }
     }
 }
