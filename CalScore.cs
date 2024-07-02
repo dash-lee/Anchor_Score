@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,18 @@ namespace Anchor_Score
             //5.收益金币：包含通话收益金币和礼物收益金币
             //6.数据波动情况（主要是上线情况的一个核查，或者是说前一天的一个表现情况和今天数据的表情情况的一个对比）
 
+            //分配计算分值的各项占比
+
+            //付费转化次数
+
+
             return score;
+        }
+
+        //付费转化次数计算权重分(参数：付费转化次数)
+        internal static double TransFeeCount(int paidCount)
+        {
+            
         }
     }
 }
