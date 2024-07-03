@@ -31,9 +31,30 @@ namespace Anchor_Score
         }
 
         //付费转化次数计算权重分(参数：付费转化次数)
-        internal static double TransFeeCount(int paidCount)
+        internal static double TransFeeCountToday(int paidCountToday)
         {
-            return 1;
+            ModuleSupport.Today_New_Pay_User = 800;
+            ModuleSupport.Today_Active_Anchor_Count = 300;
+
+            double score = Math.Log(paidCountToday, ModuleSupport.TODAY_AVERAGE_PAY_COUNT) * ModuleSupport.TODAY_PAY_TIMES_BASIC_COUNT;
+            if (score >= 30)
+            {
+                return 30;
+            }
+            else
+            {
+                return score;
+            }
+        }
+
+        //接听率计算权重分（参数：总通话次数、有效通话次数）
+        internal static double EffectiveCountToday(int totalCountToday,int EffectiveCountToday)
+        {
+            int score;
+            double effectiveRate = EffectiveCountToday / totalCountToday;   //当前的通话有效率
+
+            
+
         }
     }
 }
