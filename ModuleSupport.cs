@@ -44,16 +44,23 @@ namespace Anchor_Score
         /// <summary>
         /// 这里是主播计算评分相关的数据，需要区分不同的大区（印尼大区、英语大区），要分开进行计算
         /// </summary>
+
         //设定的新增付费用户数量
-        public static int Today_New_Pay_User {  get; set; } 
+        public static int Today_New_Pay_User { get; set; }
         //设定当天活跃的主播数量
-        public static int Today_Active_Anchor_Count {  get; set; }
+        public static int Today_Active_Anchor_Count { get; set; }
+        //当天总的有效通话次数
+        public static int Today_Effective_Call_Count { get; set; }
+        //当天总的通话次数
+        public static int Today_Total_Call_Count { get;set; }
+
         //当天主播的人均付费人数
         public static double TODAY_AVERAGE_PAY_COUNT = Today_New_Pay_User / Today_Active_Anchor_Count;
         //1.付费转化次数中达标的分数基底
-        public static int TODAY_PAY_TIMES_BASIC_COUNT = TOTAL_WEIGHT[0];
+        public static double TODAY_PAY_TIMES_BASIC_COUNT = TOTAL_WEIGHT[0] * 0.7;
+        //2.有效接听率中的达标分数基底
+        public static double TODAY_EFFECTIVE_CALL_COUNT = TOTAL_WEIGHT[1] * 0.7;
+        
 
-        //当天总的有效通话次数
-        public static int Today_
     }
 }
