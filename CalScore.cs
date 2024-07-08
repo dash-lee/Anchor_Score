@@ -15,7 +15,7 @@ namespace Anchor_Score
             ModuleSupport.Today_New_Pay_User = 800;
             ModuleSupport.Today_Active_Anchor_Count = 300;
             ModuleSupport.Today_Total_Call_Count = 3400;
-            ModuleSupport.Today_Effective_Call_Count = 1000;
+            ModuleSupport.Today_Effective_Call_Count = 1000;说
         }
 
         //工具方法
