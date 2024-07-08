@@ -15,7 +15,7 @@ namespace Anchor_Score
             ModuleSupport.Today_New_Pay_User = 800;
             ModuleSupport.Today_Active_Anchor_Count = 300;
             ModuleSupport.Today_Total_Call_Count = 3400;
-            ModuleSupport.Today_Effective_Call_Count = 1000;说
+            ModuleSupport.Today_Effective_Call_Count = 1000;
         }
 
         //工具方法
@@ -47,7 +47,7 @@ namespace Anchor_Score
         internal static double TransFeeCountToday(int paidCountToday)
         {
 
-            double score = Math.Log(paidCountToday, ModuleSupport.TODAY_AVERAGE_PAY_COUNT) * ModuleSupport.TODAY_PAY_TIMES_BASIC_COUNT;
+            double score = Math.Log(paidCountToday, ModuleSupport.Today_New_Pay_User / ModuleSupport.Today_Active_Anchor_Count) * ModuleSupport.TODAY_PAY_TIMES_BASIC_COUNT;
             if (score >= 30)
             {
                 return 30;
@@ -59,22 +59,22 @@ namespace Anchor_Score
         }
 
         //接听率计算权重分（参数：总通话次数、有效通话次数）
-        internal static double EffectiveCountToday(int todayTotalCount, int effectiveCountToday)
-        {
-            double score;
-            double effectiveRate = effectiveCountToday / todayTotalCount;   //当前的通话有效率
+        //internal static double EffectiveCountToday(int todayTotalCount, int effectiveCountToday)
+        //{
+        //    double score;
+        //    double effectiveRate = effectiveCountToday / todayTotalCount;   //当前的通话有效率
 
-            //取每个主播平均的有效通话次数
-            double effectiveCountAverage = ModuleSupport.Today_Effective_Call_Count / ModuleSupport.Today_Active_Anchor_Count;
+        //    //取每个主播平均的有效通话次数
+        //    double effectiveCountAverage = ModuleSupport.Today_Effective_Call_Count / ModuleSupport.Today_Active_Anchor_Count;
 
-            //取总体的有效接通率
-            double effectiveRateTotal = ModuleSupport.Today_Effective_Call_Count / ModuleSupport.Today_Total_Call_Count;
+        //    //取总体的有效接通率
+        //    double effectiveRateTotal = ModuleSupport.Today_Effective_Call_Count / ModuleSupport.Today_Total_Call_Count;
 
-            if (effectiveCountToday >= effectiveCountAverage)   //主播的有效次数大于平均值，视为有效
-            {
-                TODAY_EFFECTIVE_CALL_COUNT
-            }
+        //    if (effectiveCountToday >= effectiveCountAverage)   //主播的有效次数大于平均值，视为有效
+        //    {
+        //        TODAY_EFFECTIVE_CALL_COUNT说
+        //    }
 
-        }
+        //}
     }
 }

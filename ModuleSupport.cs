@@ -15,7 +15,7 @@ namespace Anchor_Score
         public static List<List<string>> DATA_ALL;
 
         //Json文件的路径
-        public static string jsonPath = @"D:\VS_BEGIN\Anchor_Score\Anchor.json";
+        public static string jsonPath = @"C:\Users\victor_hash\Source\Repos\Anchor_Score\Anchor.json";
 
         /// <summary>
         /// 不同模块所影响的数据评分占比权重
@@ -55,7 +55,7 @@ namespace Anchor_Score
         public static int Today_Total_Call_Count { get;set; }
 
         //当天主播的人均付费人数
-        public static double TODAY_AVERAGE_PAY_COUNT = Today_New_Pay_User / Today_Active_Anchor_Count;
+        //public static double TODAY_AVERAGE_PAY_COUNT = Today_New_Pay_User / Today_Active_Anchor_Count;
         //1.付费转化次数中达标的分数基底
         public static double TODAY_PAY_TIMES_BASIC_COUNT = TOTAL_WEIGHT[0] * 0.7;
         //2.有效接听率中的达标分数基底
