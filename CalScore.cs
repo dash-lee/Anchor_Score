@@ -59,10 +59,10 @@ namespace Anchor_Score
         }
 
         //接听率计算权重分（参数：总通话次数、有效通话次数）
-        internal static double EffectiveCountToday(int totalCountToday,int EffectiveCountToday)
+        internal static double EffectiveCountToday(int todayTotalCount, int effectiveCountToday)
         {
             double score;
-            double effectiveRate = EffectiveCountToday / totalCountToday;   //当前的通话有效率
+            double effectiveRate = effectiveCountToday / todayTotalCount;   //当前的通话有效率
 
             //取每个主播平均的有效通话次数
             double effectiveCountAverage = ModuleSupport.Today_Effective_Call_Count / ModuleSupport.Today_Active_Anchor_Count;
@@ -70,7 +70,7 @@ namespace Anchor_Score
             //取总体的有效接通率
             double effectiveRateTotal = ModuleSupport.Today_Effective_Call_Count / ModuleSupport.Today_Total_Call_Count;
 
-            if (EffectiveCountToday >= effectiveCountAverage)   //主播的有效次数大于平均值，视为有效
+            if (effectiveCountToday >= effectiveCountAverage)   //主播的有效次数大于平均值，视为有效
             {
                 TODAY_EFFECTIVE_CALL_COUNT
             }
